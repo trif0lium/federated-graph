@@ -1,1 +1,2 @@
-export * from './lib/backend-models';
+export * from './lib/subgraph.model';
+export * from './lib/subgraph-version.model';
