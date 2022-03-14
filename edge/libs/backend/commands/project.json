@@ -1,0 +1,34 @@
+{
+  "root": "libs/backend/commands",
+  "sourceRoot": "libs/backend/commands/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/backend/commands",
+        "tsConfig": "libs/backend/commands/tsconfig.lib.json",
+        "packageJson": "libs/backend/commands/package.json",
+        "main": "libs/backend/commands/src/index.ts",
+        "assets": ["libs/backend/commands/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/backend/commands/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/backend/commands"],
+      "options": {
+        "jestConfig": "libs/backend/commands/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

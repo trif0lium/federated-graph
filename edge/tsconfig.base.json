@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@edge/backend/commands": ["libs/backend/commands/src/index.ts"],
       "@edge/backend/events": ["libs/backend/events/src/index.ts"],
       "@edge/backend/federated-graph": [
         "libs/backend/federated-graph/src/index.ts"
