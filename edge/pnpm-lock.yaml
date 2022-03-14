@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@nestjs/common': ^8.0.0
   '@nestjs/core': ^8.0.0
+  '@nestjs/cqrs': ^8.0.3
   '@nestjs/platform-express': ^8.0.0
   '@nestjs/schematics': ^8.0.0
   '@nestjs/testing': ^8.0.0
@@ -31,6 +32,7 @@ specifiers:
 dependencies:
   '@nestjs/common': 8.4.0_e7ea248743279784063e3708d703abc5
   '@nestjs/core': 8.4.0_ded80713f50ec1c99e9ba95af1765d72
+  '@nestjs/cqrs': 8.0.3_44ad68f90df6df0ad3d3ea7593df94f3
   '@nestjs/platform-express': 8.4.0_31e7036b193d6d3c9cadab18cbb4af84
   reflect-metadata: 0.1.13
   rxjs: 7.5.5
@@ -779,6 +781,21 @@ packages:
       uuid: 8.3.2
     transitivePeerDependencies:
       - encoding
+    dev: false
+
+  /@nestjs/cqrs/8.0.3_44ad68f90df6df0ad3d3ea7593df94f3:
+    resolution: {integrity: sha512-OVZ4yUcJCGnkpPD0gntzCLBd/4Nv6hFVioFMcARs/V7U7CbzraaBinT8+mr9XuoKj9aYX6XCI9qz0+KR8rMSqQ==}
+    peerDependencies:
+      '@nestjs/common': ^8.0.0
+      '@nestjs/core': ^8.0.0
+      reflect-metadata: 0.1.13
+      rxjs: ^7.2.0
+    dependencies:
+      '@nestjs/common': 8.4.0_e7ea248743279784063e3708d703abc5
+      '@nestjs/core': 8.4.0_ded80713f50ec1c99e9ba95af1765d72
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.5
+      uuid: 8.3.2
     dev: false
 
   /@nestjs/platform-express/8.4.0_31e7036b193d6d3c9cadab18cbb4af84:
