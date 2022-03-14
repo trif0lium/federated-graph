@@ -1,0 +1,33 @@
+{
+  "root": "libs/backend/federated-graph",
+  "sourceRoot": "libs/backend/federated-graph/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/backend/federated-graph",
+        "tsConfig": "libs/backend/federated-graph/tsconfig.lib.json",
+        "packageJson": "libs/backend/federated-graph/package.json",
+        "main": "libs/backend/federated-graph/src/index.ts",
+        "assets": ["libs/backend/federated-graph/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/backend/federated-graph/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/backend/federated-graph"],
+      "options": {
+        "jestConfig": "libs/backend/federated-graph/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
