@@ -3,6 +3,7 @@
   "projects": {
     "api": "apps/api",
     "backend-federated-graph": "libs/backend/federated-graph",
+    "backend-models": "libs/backend/models",
     "backend-subgraph": "libs/backend/subgraph"
   }
 }

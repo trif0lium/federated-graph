@@ -11,6 +11,7 @@ specifiers:
   '@nrwl/cli': 13.8.8
   '@nrwl/eslint-plugin-nx': 13.8.8
   '@nrwl/jest': 13.8.8
+  '@nrwl/js': 13.8.8
   '@nrwl/linter': 13.8.8
   '@nrwl/nest': 13.8.8
   '@nrwl/node': 13.8.8
@@ -48,6 +49,7 @@ devDependencies:
   '@nrwl/cli': 13.8.8
   '@nrwl/eslint-plugin-nx': 13.8.8_6f7ffd8ae165f7f1947131862b9ce494
   '@nrwl/jest': 13.8.8
+  '@nrwl/js': 13.8.8_a945cf57d5944e875bf896a5a1e53eb0
   '@nrwl/linter': 13.8.8_eslint@8.7.0+typescript@4.5.5
   '@nrwl/nest': 13.8.8_a945cf57d5944e875bf896a5a1e53eb0
   '@nrwl/node': 13.8.8_a945cf57d5944e875bf896a5a1e53eb0

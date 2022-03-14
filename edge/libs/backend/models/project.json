@@ -1,0 +1,34 @@
+{
+  "root": "libs/backend/models",
+  "sourceRoot": "libs/backend/models/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/backend/models",
+        "tsConfig": "libs/backend/models/tsconfig.lib.json",
+        "packageJson": "libs/backend/models/package.json",
+        "main": "libs/backend/models/src/index.ts",
+        "assets": ["libs/backend/models/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/backend/models/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/backend/models"],
+      "options": {
+        "jestConfig": "libs/backend/models/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
