@@ -17,7 +17,8 @@
     "paths": {
       "@edge/backend/federated-graph": [
         "libs/backend/federated-graph/src/index.ts"
-      ]
+      ],
+      "@edge/backend/subgraph": ["libs/backend/subgraph/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,33 @@
+{
+  "root": "libs/backend/subgraph",
+  "sourceRoot": "libs/backend/subgraph/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/backend/subgraph",
+        "tsConfig": "libs/backend/subgraph/tsconfig.lib.json",
+        "packageJson": "libs/backend/subgraph/package.json",
+        "main": "libs/backend/subgraph/src/index.ts",
+        "assets": ["libs/backend/subgraph/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/backend/subgraph/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/backend/subgraph"],
+      "options": {
+        "jestConfig": "libs/backend/subgraph/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
