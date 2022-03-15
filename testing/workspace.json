@@ -3,6 +3,7 @@
   "projects": {
     "characters-dgs": "apps/characters-dgs",
     "constellations-dgs": "apps/constellations-dgs",
-    "genshin-api": "apps/genshin-api"
+    "genshin-api": "apps/genshin-api",
+    "genshindev-api": "libs/genshindev-api"
   }
 }

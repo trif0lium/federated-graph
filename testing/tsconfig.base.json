@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@testing/genshindev-api": ["libs/genshindev-api/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
