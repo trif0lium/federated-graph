@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "characters-dgs": "apps/characters-dgs",
     "constellations-dgs": "apps/constellations-dgs",
     "genshin-api": "apps/genshin-api"
   }

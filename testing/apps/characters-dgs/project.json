@@ -1,0 +1,52 @@
+{
+  "root": "apps/characters-dgs",
+  "sourceRoot": "apps/characters-dgs/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/characters-dgs",
+        "main": "apps/characters-dgs/src/main.ts",
+        "tsConfig": "apps/characters-dgs/tsconfig.app.json",
+        "assets": ["apps/characters-dgs/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/characters-dgs/src/environments/environment.ts",
+              "with": "apps/characters-dgs/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "characters-dgs:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/characters-dgs/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/characters-dgs"],
+      "options": {
+        "jestConfig": "apps/characters-dgs/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
