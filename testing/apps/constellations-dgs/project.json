@@ -1,0 +1,52 @@
+{
+  "root": "apps/constellations-dgs",
+  "sourceRoot": "apps/constellations-dgs/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/constellations-dgs",
+        "main": "apps/constellations-dgs/src/main.ts",
+        "tsConfig": "apps/constellations-dgs/tsconfig.app.json",
+        "assets": ["apps/constellations-dgs/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/constellations-dgs/src/environments/environment.ts",
+              "with": "apps/constellations-dgs/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "constellations-dgs:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/constellations-dgs/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/constellations-dgs"],
+      "options": {
+        "jestConfig": "apps/constellations-dgs/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
