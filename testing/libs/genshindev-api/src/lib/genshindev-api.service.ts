@@ -19,7 +19,7 @@ export class GenshindevApiService {
     }
 
     const characters = await lastValueFrom(this.httpService.get<string[]>(api))
-    await this.cacheManager.set(api, characters)
+    await this.cacheManager.set(api, characters.data)
     return characters.data
   }
 
@@ -31,7 +31,7 @@ export class GenshindevApiService {
     }
 
     const character = await lastValueFrom(this.httpService.get<Character>(api))
-    await this.cacheManager.set(api, character)
+    await this.cacheManager.set(api, character.data)
     return character.data
   }
 }
