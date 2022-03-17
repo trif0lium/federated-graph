@@ -26,11 +26,16 @@
         }
       }
     },
+    "dev": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "PORT=4001 pnpm nx run characters-dgs:serve"
+      }
+    },
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "characters-dgs:build",
-        "runtimeArgs": ["PORT=4001"]
+        "buildTarget": "characters-dgs:build"
       }
     },
     "lint": {
