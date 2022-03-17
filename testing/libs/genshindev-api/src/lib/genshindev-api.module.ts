@@ -5,7 +5,7 @@ import { GenshindevApiService } from './genshindev-api.service';
 @Module({
   imports: [HttpModule, CacheModule.register()],
   controllers: [],
-  providers: [],
+  providers: [GenshindevApiService],
   exports: [GenshindevApiService],
 })
-export class GenshindevApiModule {}
+export class GenshindevApiModule { }
