@@ -11,7 +11,8 @@ import { AppService } from './app.service';
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       autoSchemaFile: true,
-      plugins: [ApolloServerPluginLandingPageGraphQLPlayground]
+      playground: false,
+      plugins: [ApolloServerPluginLandingPageGraphQLPlayground({})]
     }),
     CharacterModule
   ],
