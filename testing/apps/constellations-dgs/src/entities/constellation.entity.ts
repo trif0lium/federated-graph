@@ -10,7 +10,4 @@ export class Constellation {
 
   @Field()
   description: string
-
-  @Field((type) => Int)
-  level: number
 }
