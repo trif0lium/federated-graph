@@ -29,7 +29,8 @@
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "characters-dgs:build"
+        "buildTarget": "characters-dgs:build",
+        "args": ["PORT=4001"]
       }
     },
     "lint": {
