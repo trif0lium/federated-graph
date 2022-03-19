@@ -26,6 +26,12 @@
         }
       }
     },
+    "dev": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "PORT=4002 pnpm nx run characters-dgs:serve"
+      }
+    },
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
