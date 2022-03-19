@@ -26,6 +26,12 @@
         }
       }
     },
+    "dev": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "PORT=4000 pnpm nx run genshin-api:serve"
+      }
+    },
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
