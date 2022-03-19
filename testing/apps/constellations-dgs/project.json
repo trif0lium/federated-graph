@@ -29,7 +29,7 @@
     "dev": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "PORT=4002 pnpm nx run characters-dgs:serve"
+        "command": "PORT=4002 pnpm nx run constellations-dgs:serve"
       }
     },
     "serve": {
