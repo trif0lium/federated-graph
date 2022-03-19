@@ -6,10 +6,10 @@ import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-co
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Character } from '../entities/character.entity';
+import { DgsModule } from '../dgs/dgs.module';
 
 @Module({
   imports: [
-
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       autoSchemaFile: true,
@@ -19,6 +19,7 @@ import { Character } from '../entities/character.entity';
         orphanedTypes: [Character]
       }
     }),
+    DgsModule,
     CharacterModule
   ],
   controllers: [AppController],
