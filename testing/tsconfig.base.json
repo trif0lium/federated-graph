@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@testing/entities": ["libs/entities/src/index.ts"],
       "@testing/genshindev-api": ["libs/genshindev-api/src/index.ts"]
     }
   },
