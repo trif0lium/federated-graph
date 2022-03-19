@@ -5,6 +5,7 @@ import { ApolloFederationDriver, ApolloFederationDriverConfig } from '@nestjs/ap
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core'
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { Character } from '../entities/character.entity';
 
 @Module({
   imports: [
@@ -13,7 +14,10 @@ import { AppService } from './app.service';
       driver: ApolloFederationDriver,
       autoSchemaFile: true,
       playground: false,
-      plugins: [ApolloServerPluginLandingPageGraphQLPlayground({})]
+      plugins: [ApolloServerPluginLandingPageGraphQLPlayground({})],
+      buildSchemaOptions: {
+        orphanedTypes: [Character]
+      }
     }),
     CharacterModule
   ],
