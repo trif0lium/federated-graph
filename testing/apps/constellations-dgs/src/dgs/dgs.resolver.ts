@@ -1,4 +1,10 @@
-import { Resolver } from '@nestjs/graphql';
+import { Query, Resolver } from '@nestjs/graphql';
+import { DGS } from '@testing/entities'
 
-@Resolver()
-export class DgsResolver {}
+@Resolver(() => DGS)
+export class DgsResolver {
+  @Query(() => DGS)
+  constellationsDgs(): DGS {
+    return { ok: true }
+  }
+}
