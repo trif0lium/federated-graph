@@ -48,5 +48,6 @@
       }
     }
   },
+  "implicitDependencies": ["characters-dgs", "constellations-dgs"],
   "tags": []
 }
