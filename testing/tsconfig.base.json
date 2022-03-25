@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@testing/entities": ["libs/entities/src/index.ts"],
-      "@testing/genshindev-api": ["libs/genshindev-api/src/index.ts"]
+      "@testing/genshindev-api": ["libs/genshindev-api/src/index.ts"],
+      "@testing/opentelemetry": ["libs/opentelemetry/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

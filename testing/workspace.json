@@ -5,6 +5,7 @@
     "constellations-dgs": "apps/constellations-dgs",
     "entities": "libs/entities",
     "genshin-api": "apps/genshin-api",
-    "genshindev-api": "libs/genshindev-api"
+    "genshindev-api": "libs/genshindev-api",
+    "opentelemetry": "libs/opentelemetry"
   }
 }

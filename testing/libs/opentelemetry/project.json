@@ -1,0 +1,34 @@
+{
+  "root": "libs/opentelemetry",
+  "sourceRoot": "libs/opentelemetry/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/opentelemetry",
+        "tsConfig": "libs/opentelemetry/tsconfig.lib.json",
+        "packageJson": "libs/opentelemetry/package.json",
+        "main": "libs/opentelemetry/src/index.ts",
+        "assets": ["libs/opentelemetry/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/opentelemetry/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/opentelemetry"],
+      "options": {
+        "jestConfig": "libs/opentelemetry/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
