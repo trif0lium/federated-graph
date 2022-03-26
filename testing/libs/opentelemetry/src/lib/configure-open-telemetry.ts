@@ -1,4 +1,4 @@
-import { registerInstrumentations } from '@opentelemetry/instrumentation'
+import { InstrumentationOption, registerInstrumentations } from '@opentelemetry/instrumentation'
 import { HttpInstrumentation } from '@opentelemetry/instrumentation-http'
 import { GraphQLInstrumentation } from '@opentelemetry/instrumentation-graphql'
 import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node'
@@ -12,17 +12,22 @@ interface ConfigureOpenTelemetryInstrumentationOptions {
 }
 
 export function configureOpenTelemetryInstrumentation(options: ConfigureOpenTelemetryInstrumentationOptions) {
-  registerInstrumentations({
-    instrumentations: [
-      new HttpInstrumentation({
-        applyCustomAttributesOnSpan: (span: Span, request: ClientRequest, response: IncomingMessage | ServerResponse) => {
-          if (request.hasHeader('x-edge-date')) {
-            span.setAttribute('x-edge-date', request.getHeader('x-edge-date'))
-          }
+  const instrumentations: InstrumentationOption[] = [
+    new HttpInstrumentation({
+      applyCustomAttributesOnSpan: (span: Span, request: ClientRequest, response: IncomingMessage | ServerResponse) => {
+        if (request.hasHeader('x-edge-date')) {
+          span.setAttribute('x-edge-date', request.getHeader('x-edge-date'))
         }
-      }),
-      options.isDGS && new GraphQLInstrumentation()
-    ]
+      }
+    })
+  ]
+
+  if (options.isDGS) {
+    instrumentations.push(new GraphQLInstrumentation())
+  }
+
+  registerInstrumentations({
+    instrumentations
   })
 
   const provider = new NodeTracerProvider({
