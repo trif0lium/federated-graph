@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { IntrospectAndCompose } from '@apollo/gateway'
+import { IntrospectAndCompose, RemoteGraphQLDataSource } from '@apollo/gateway'
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloGatewayDriver, ApolloGatewayDriverConfig } from '@nestjs/apollo';
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core'
@@ -27,7 +27,15 @@ function supergraphSdl(): IntrospectAndCompose {
         plugins: [ApolloServerPluginLandingPageGraphQLPlayground({})],
       },
       gateway: {
-        supergraphSdl: supergraphSdl()
+        supergraphSdl: supergraphSdl(),
+        buildService({ url }) {
+          return new RemoteGraphQLDataSource({
+            url,
+            willSendRequest({ request }) {
+              request.http.headers.set('x-edge-date', new Date().toISOString())
+            }
+          })
+        }
       }
     })
   ],
