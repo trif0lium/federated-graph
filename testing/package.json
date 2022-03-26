@@ -28,6 +28,7 @@
     "@opentelemetry/sdk-trace-node": "1.0.1",
     "apollo-server-core": "^3.6.4",
     "apollo-server-express": "^3.6.4",
+    "apollo-server-plugin-base": "^3.5.2",
     "cache-manager": "^3.6.0",
     "graphql": "15",
     "reflect-metadata": "^0.1.13",
