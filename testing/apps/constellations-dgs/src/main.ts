@@ -5,10 +5,12 @@
 
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import {configureOpenTelemetryInstrumentation} from '@testing/opentelemetry'
 
 import { AppModule } from './app/app.module';
 
 async function bootstrap() {
+  configureOpenTelemetryInstrumentation({ serviceName: 'constellations-dgs', isDGS: true })
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
