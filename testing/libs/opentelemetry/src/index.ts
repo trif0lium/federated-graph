@@ -1,1 +1,1 @@
-export * from './lib/opentelemetry';
+export * from './lib/configure-open-telemetry';
