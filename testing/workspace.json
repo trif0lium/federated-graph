@@ -7,6 +7,7 @@
     "genshin-api": "apps/genshin-api",
     "genshindev-api": "libs/genshindev-api",
     "opentelemetry": "libs/opentelemetry",
+    "request-context": "libs/request-context",
     "schema-reporting": "libs/schema-reporting"
   }
 }

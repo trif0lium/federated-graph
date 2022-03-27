@@ -18,6 +18,7 @@
       "@testing/entities": ["libs/entities/src/index.ts"],
       "@testing/genshindev-api": ["libs/genshindev-api/src/index.ts"],
       "@testing/opentelemetry": ["libs/opentelemetry/src/index.ts"],
+      "@testing/request-context": ["libs/request-context/src/index.ts"],
       "@testing/schema-reporting": ["libs/schema-reporting/src/index.ts"]
     }
   },
