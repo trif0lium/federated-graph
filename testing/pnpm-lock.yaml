@@ -43,6 +43,7 @@ specifiers:
   eslint-config-prettier: 8.1.0
   graphql: '15'
   jest: 27.2.3
+  pino: ^7.9.2
   prettier: ^2.5.1
   reflect-metadata: ^0.1.13
   rxjs: ^7.0.0
@@ -74,6 +75,7 @@ dependencies:
   apollo-server-plugin-base: 3.5.2_graphql@15.8.0
   cache-manager: 3.6.0
   graphql: 15.8.0
+  pino: 7.9.2
   reflect-metadata: 0.1.13
   rxjs: 7.5.5
   tslib: 2.3.1
@@ -5971,6 +5973,22 @@ packages:
       thread-stream: 0.13.2
     dev: false
 
+  /pino/7.9.2:
+    resolution: {integrity: sha512-c8wmB2PuhdJurYPRl/eo3+PosHe7Ep6GZvBJFIrp9oV1YRZQ3qm3MujaEolaKUfwX8cDL96WKCWWMedB2drXqw==}
+    hasBin: true
+    dependencies:
+      fast-redact: 3.1.1
+      on-exit-leak-free: 0.2.0
+      pino-abstract-transport: 0.5.0
+      pino-std-serializers: 4.0.0
+      process-warning: 1.0.0
+      quick-format-unescaped: 4.0.4
+      real-require: 0.1.0
+      safe-stable-stringify: 2.3.1
+      sonic-boom: 2.6.0
+      thread-stream: 0.15.1
+    dev: false
+
   /pirates/4.0.5:
     resolution: {integrity: sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==}
     engines: {node: '>= 6'}
@@ -6014,6 +6032,10 @@ packages:
 
   /process-nextick-args/2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
+    dev: false
+
+  /process-warning/1.0.0:
+    resolution: {integrity: sha512-du4wfLyj4yCZq1VupnVSZmRsPJsNuxoDQFdCFHLaYiEbFBD7QE0a+I4D7hOxrVnh78QE/YipFAj9lXHiXocV+Q==}
     dev: false
 
   /promise-inflight/1.0.1:
@@ -6718,6 +6740,12 @@ packages:
 
   /thread-stream/0.13.2:
     resolution: {integrity: sha512-woZFt0cLFkPdhsa+IGpRo1jiSouaHxMIljzTgt30CMjBWoUYbbcHqnunW5Yv+BXko9H05MVIcxMipI3Jblallw==}
+    dependencies:
+      real-require: 0.1.0
+    dev: false
+
+  /thread-stream/0.15.1:
+    resolution: {integrity: sha512-SCnuIT27gc2h/F/RY2peuC7brgLy+1oXU+7yOIAITz1z5stDpXCF5rAoFcykjuK6ifbTlKAHL7Ccq8oc5Btv1w==}
     dependencies:
       real-require: 0.1.0
     dev: false
