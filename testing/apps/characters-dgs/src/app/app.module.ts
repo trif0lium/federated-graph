@@ -5,9 +5,15 @@ import { ApolloFederationDriver, ApolloFederationDriverConfig } from '@nestjs/ap
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core'
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { RequestContextModule } from '@testing/request-context';
+import { AppRequestContext } from './app.request-context';
 
 @Module({
   imports: [
+    RequestContextModule.forRoot({
+      contextClass: AppRequestContext,
+      isGlobal: true
+    }),
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       autoSchemaFile: true,
