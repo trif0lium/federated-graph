@@ -9,3 +9,8 @@ export abstract class RequestContext {
     return RequestContext.asyncLocalStorage.getStore() as T;
   }
 }
+
+export interface RequestContextModuleOptions<T extends RequestContext> {
+  contextClass: (new () => T);
+  isGlobal: boolean;
+}
