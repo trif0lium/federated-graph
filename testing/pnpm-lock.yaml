@@ -32,6 +32,7 @@ specifiers:
   '@opentelemetry/sdk-trace-base': 1.0.1
   '@opentelemetry/sdk-trace-node': 1.0.1
   '@types/cache-manager': ^3.4.3
+  '@types/express': ^4.17.13
   '@types/jest': 27.0.2
   '@types/node': 16.11.7
   '@typescript-eslint/eslint-plugin': ~5.10.0
@@ -42,6 +43,7 @@ specifiers:
   cache-manager: ^3.6.0
   eslint: ~8.7.0
   eslint-config-prettier: 8.1.0
+  express: ^4.17.3
   graphql: '15'
   jest: 27.2.3
   pino: ^7.9.2
@@ -73,9 +75,10 @@ dependencies:
   '@opentelemetry/sdk-trace-base': 1.0.1_@opentelemetry+api@1.0.4
   '@opentelemetry/sdk-trace-node': 1.0.1_@opentelemetry+api@1.0.4
   apollo-server-core: 3.6.4_graphql@15.8.0
-  apollo-server-express: 3.6.4_graphql@15.8.0
+  apollo-server-express: 3.6.4_express@4.17.3+graphql@15.8.0
   apollo-server-plugin-base: 3.5.2_graphql@15.8.0
   cache-manager: 3.6.0
+  express: 4.17.3
   graphql: 15.8.0
   pino: 7.9.2
   reflect-metadata: 0.1.13
@@ -95,6 +98,7 @@ devDependencies:
   '@nrwl/tao': 13.8.8
   '@nrwl/workspace': 13.8.8_a945cf57d5944e875bf896a5a1e53eb0
   '@types/cache-manager': 3.4.3
+  '@types/express': 4.17.13
   '@types/jest': 27.0.2
   '@types/node': 16.11.7
   '@typescript-eslint/eslint-plugin': 5.10.2_61711575dd6de0ced61e0bccc6181943
@@ -965,7 +969,7 @@ packages:
       '@nestjs/core': 8.4.1_03a788a1eb0bf93a7b64e9ce96523e26
       '@nestjs/graphql': 10.0.7_cf4d6bb189cf36faaf1e53af4f00a91f
       apollo-server-core: 3.6.4_graphql@15.8.0
-      apollo-server-express: 3.6.4_graphql@15.8.0
+      apollo-server-express: 3.6.4_express@4.17.3+graphql@15.8.0
       iterall: 1.3.0
       lodash.omit: 4.5.0
       tslib: 2.3.1
@@ -2022,7 +2026,6 @@ packages:
     dependencies:
       '@types/connect': 3.4.35
       '@types/node': 16.11.7
-    dev: false
 
   /@types/cache-manager/3.4.3:
     resolution: {integrity: sha512-71aBXoFYXZW4TnDHHH8gExw2lS28BZaWeKefgsiJI7QYZeJfUEbMKw6CQtzGjlYQcGIWwB76hcCrkVA3YHSvsw==}
@@ -2032,7 +2035,6 @@ packages:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
       '@types/node': 16.11.7
-    dev: false
 
   /@types/cors/2.8.12:
     resolution: {integrity: sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==}
@@ -2062,7 +2064,6 @@ packages:
       '@types/node': 16.11.7
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
-    dev: false
 
   /@types/express/4.17.13:
     resolution: {integrity: sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA==}
@@ -2071,7 +2072,6 @@ packages:
       '@types/express-serve-static-core': 4.17.28
       '@types/qs': 6.9.7
       '@types/serve-static': 1.13.10
-    dev: false
 
   /@types/graceful-fs/4.1.5:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
@@ -2123,7 +2123,6 @@ packages:
 
   /@types/mime/1.3.2:
     resolution: {integrity: sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==}
-    dev: false
 
   /@types/node-fetch/2.6.1:
     resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==}
@@ -2149,18 +2148,15 @@ packages:
 
   /@types/qs/6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
-    dev: false
 
   /@types/range-parser/1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
-    dev: false
 
   /@types/serve-static/1.13.10:
     resolution: {integrity: sha512-nCkHGI4w7ZgAdNkrEu0bv+4xNV/XDqW+DydknebMOQwkpDGx8G+HTlj7R7ABI8i8nKxVw0wtKPi1D+lPOkh4YQ==}
     dependencies:
       '@types/mime': 1.3.2
       '@types/node': 16.11.7
-    dev: false
 
   /@types/stack-utils/2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
@@ -2667,7 +2663,7 @@ packages:
       graphql: 15.8.0
     dev: false
 
-  /apollo-server-express/3.6.4_graphql@15.8.0:
+  /apollo-server-express/3.6.4_express@4.17.3+graphql@15.8.0:
     resolution: {integrity: sha512-lN73Ka7UZJINJzvMeRFIFn7898hGjTxVtRQwAzzmw5XSpWZZHZkTcAkoDxUs0GwU6h2LE14ogu2WJ4G8AZVl1Q==}
     engines: {node: '>=12.0'}
     peerDependencies:
@@ -2684,6 +2680,7 @@ packages:
       apollo-server-types: 3.5.1_graphql@15.8.0
       body-parser: 1.19.2
       cors: 2.8.5
+      express: 4.17.3
       graphql: 15.8.0
       parseurl: 1.3.3
     transitivePeerDependencies:
