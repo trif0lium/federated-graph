@@ -16,7 +16,7 @@ class RequestContextProviderModule implements NestModule {
       const ctx: AppRequestContext = AppRequestContext.get()
       ctx['x-edge-date'] = req.headers['x-edge-date'] as string
       next()
-    })
+    }).forRoutes('*')
   }
 }
 
