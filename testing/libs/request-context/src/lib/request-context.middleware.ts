@@ -28,6 +28,5 @@ export function requestContextMiddleware<T extends RequestContext>(
 function middleware<T extends RequestContext>(
   contextClass: (new () => T), req: Request, res: Response, next: NextFunction
 ): void {
-  RequestContext.start(contextClass)
-  next()
+  RequestContext.start(contextClass, () => next())
 }

@@ -2,8 +2,8 @@ import { AsyncLocalStorage } from 'async_hooks'
 
 export abstract class RequestContext {
   static asyncLocalStorage = new AsyncLocalStorage<RequestContext>();
-  static start = <T extends RequestContext>(constructor: new () => T): void => {
-    RequestContext.asyncLocalStorage.enterWith(new constructor())
+  static start = <T extends RequestContext>(constructor: new () => T, callback: () => unknown): void => {
+    RequestContext.asyncLocalStorage.run(new constructor(), callback)
   }
   static get<T extends RequestContext>(): T {
     return RequestContext.asyncLocalStorage.getStore() as T;
