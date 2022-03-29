@@ -24,11 +24,16 @@ class RequestContextProviderModule implements NestModule {
 @Module({
   imports: [
     RequestContextModule.forRoot({
+      isGlobal: true,
       contextClass: AppRequestContext,
-      isGlobal: true
     }),
     RequestContextProviderModule,
-    LoggingModule,
+    LoggingModule.forRoot({
+      isGlobal: true,
+      requestContext: {
+        contextClass: AppRequestContext
+      }
+    }),
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       autoSchemaFile: true,
