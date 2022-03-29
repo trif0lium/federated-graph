@@ -28,5 +28,33 @@ export class LoggingService implements LoggerService {
     this.source = source
     this.requestContext = requestContext
   }
+
+  private get logFields(): object {
+    if (this.requestContext) {
+      return { source: this.source, ...this.requestContext.logFields }
+    }
+
+    return { source: this.source }
+  }
+
+  log(message: string, ...optionalParams: any[]) {
+    this.logger.info({ ...this.logFields, optionalParams: optionalParams }, message)
+  }
+
+  info(message: string, ...optionalParams: any[]) {
+    this.logger.info({ ...this.logFields, optionalParams: optionalParams }, message)
+  }
+
+  error(message: string, ...optionalParams: any[]) {
+    this.logger.error({ ...this.logFields, optionalParams: optionalParams }, message)
+  }
+
+  warn(message: string, ...optionalParams: any[]) {
+    this.logger.warn({ ...this.logFields, optionalParams: optionalParams }, message)
+  }
+
+  debug(message: string, ...optionalParams: any[]) {
+    this.logger.debug({ ...this.logFields, optionalParams: optionalParams }, message)
+  }
 }
 
