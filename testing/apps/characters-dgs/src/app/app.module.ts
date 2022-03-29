@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 import { RequestContextModule } from '@testing/request-context';
 import { AppRequestContext } from './app.request-context';
 import { NextFunction, Request, Response } from 'express';
+import { LoggingModule } from '@testing/logging'
 
 @Module({})
 class RequestContextProviderModule implements NestModule {
@@ -27,6 +28,7 @@ class RequestContextProviderModule implements NestModule {
       isGlobal: true
     }),
     RequestContextProviderModule,
+    LoggingModule,
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       autoSchemaFile: true,
