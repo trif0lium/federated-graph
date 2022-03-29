@@ -21,17 +21,18 @@ export class LoggingService implements LoggerService {
 
   // eslint-disable-next-line @typescript-eslint/ban-types
   private readonly source: string | object
-  private readonly requestContext?: RequestContext
+  private readonly requestContext?: typeof RequestContext
 
   // eslint-disable-next-line @typescript-eslint/ban-types
-  constructor(@Inject(INQUIRER) source?: string | object, @Inject(REQUEST_CONTEXT) requestContext?: RequestContext) {
+  constructor(@Inject(INQUIRER) source?: string | object, @Inject(REQUEST_CONTEXT) requestContext?: typeof RequestContext) {
     this.source = source
     this.requestContext = requestContext
   }
 
   private get logFields(): object {
     if (this.requestContext) {
-      return { source: this.source, ...this.requestContext.logFields }
+      const ctx = this.requestContext.get()
+      return { source: this.source, fields: { ...ctx.logFields } }
     }
 
     return { source: this.source }
