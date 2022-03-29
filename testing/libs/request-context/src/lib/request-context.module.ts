@@ -1,6 +1,6 @@
-import { DynamicModule, MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { DynamicModule, MiddlewareConsumer, Module, NestModule, Scope } from '@nestjs/common';
 import { RequestContext, RequestContextModuleOptions } from './request-context.class';
-import { REQUEST_CONTEXT_MODULE_OPTIONS } from './request-context.constant';
+import { REQUEST_CONTEXT, REQUEST_CONTEXT_MODULE_OPTIONS } from './request-context.constant';
 import { RequestContextMiddleware } from './request-context.middleware';
 
 @Module({
@@ -17,6 +17,11 @@ export class RequestContextModule implements NestModule {
         {
           provide: REQUEST_CONTEXT_MODULE_OPTIONS,
           useValue: options
+        },
+        {
+          provide: REQUEST_CONTEXT,
+          scope: Scope.TRANSIENT,
+          useValue: options.contextClass
         }
       ]
     }
