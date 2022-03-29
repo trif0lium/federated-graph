@@ -5,7 +5,7 @@ import { LoggingService } from './logging.service';
 export interface LoggingModuleOptions {
   isGlobal: boolean
   requestContext: {
-    contextClass: RequestContext
+    contextClass: (new () => RequestContext)
   }
 }
 
